@@ -156,7 +156,8 @@ StTooltip StLabel {
 }
 
 .popup-menu-item:active {
-    background-color: rgba(0,153,204,0.5);
+    /*background-color: rgba(0,153,204,0.5);*/
+    background-color: rgba(51,189,229,0.5);
 }
 
 .popup-menu-item:insensitive {
@@ -291,22 +292,30 @@ StTooltip StLabel {
 .panel-button {
     -natural-hpadding: 10px;
     -minimum-hpadding: 6px;
-    font-weight: bold;
+    font-weight: normal;
     text-transform: uppercase;
-    color: #ccc;
+    /*color: #ccc;*/
+    color: #33b5e5;
     transition-duration: 150;
 }
 .panel-button > StLabel {
     text-transform: uppercase;
 }
 
-.panel-button > StIcon {
+.panel-button /*>*/ StIcon {
 	icon-size: 16px; /* Tray icon size */
+	color: #ccc;
+}
+
+.panel-button #appMenuIcon { /*Remove the ugly app gradient icon*/
+    width: 0px;
+    height: 0px;
 }
 
 .panel-button:hover {
     color: white;
-    background: rgba(0,153,204,0.5);
+    /*background: rgba(0,153,204,0.5);*/
+    background: rgba(51,189,229,0.5);
 }
 
 .panel-button:active,
@@ -329,6 +338,12 @@ StTooltip StLabel {
 }
 
 #panelActivities {
+    border: none;
+    background-image: url("start.svg");
+    background-position: center center;
+    width: 56px;
+    height: 24px;
+    color: rgba(0,0,0,0.0);
 }
 
 #panelStatus {
@@ -380,7 +395,8 @@ StTooltip StLabel {
 
 .status-chooser-user-icon:hover {
     border: 1px solid #33B5E5;
-		box-shadow: 0px 0px 0px 3px rgba(0,153,204,0.5);
+		/*box-shadow: 0px 0px 0px 3px rgba(0,153,204,0.5);*/
+                box-shadow: 0px 0px 0px 3px rgba(51,189,229,0.5);
 }
 
 .status-chooser-user-name {
@@ -493,7 +509,8 @@ StTooltip StLabel {
 }
 
 .workspace-thumbnail-indicator {
-    outline: 8px solid rgba(0,153,204,0.5);
+    /*outline: 8px solid rgba(0,153,204,0.5);*/
+    outline: 8px solid rgba(51,189,229,0.5);
     border: 1px solid #33B5E5;
     box-shadow: inset 0px 0px 6px 3px rgba(0,0,0,0.5);
 }
@@ -696,7 +713,7 @@ StTooltip StLabel {
 
 .dash-search-button {
     width: 250px;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .dash-search-button:selected,
@@ -716,9 +733,9 @@ StTooltip StLabel {
 /* Apps */
 
 .icon-grid {
-    spacing: 16px;
-    -shell-grid-horizontal-item-size: 120px;
-    -shell-grid-vertical-item-size: 125px;
+    spacing: 26px;
+    -shell-grid-horizontal-item-size: 100px;
+    -shell-grid-vertical-item-size: 110px;
 }
 
 .contact-grid {
@@ -728,7 +745,7 @@ StTooltip StLabel {
 }
 
 .icon-grid .overview-icon {
-    icon-size: 92px;
+    icon-size: 96px;
 }
 
 .all-app {
@@ -864,8 +881,10 @@ StTooltip StLabel {
 .app-well-app:selected > .overview-icon,
 .search-result-content:selected > .overview-icon {
     /*background: rgba(0,153,204,0.5);*/
+    background: rgba(51,189,229,0.5);
     background: none;
-    border: 1px solid #99CC00;
+    /*border: 1px solid #99CC00;*/
+    border: 1px solid #33b5e5;
 }
 
 .contact:hover,
@@ -877,18 +896,21 @@ StTooltip StLabel {
     border: 1px solid transparent;
     box-shadow: inset 0px 1px 3px 1px rgba(0,0,0,0.1);*/
     background: none;
-    border: 1px solid #99CC00;
+    /*border: 1px solid #99CC00;*/
+    border: 1px solid #33b5e5;
 }
 
 .app-well-app.running:hover > .overview-icon {
-    background: rgba(153,204,0,0.15);
+    /*background: rgba(153,204,0,0.15);*/
+    background: rgba(51,189,229,0.15)
 }
 
 .contact:focus,
 .app-well-app:focus > .overview-icon,
 .search-result-content:focus > .overview-icon {
     background: none;
-    border: 1px solid #99CC00;
+    /*border: 1px solid #99CC00;*/
+    border: 1px solid #33b5e5;
 }
 
 .app-well-menu {
@@ -947,8 +969,8 @@ StTooltip StLabel {
 #notification {
     font-size: 10pt;
     padding: 4px 8px 4px 8px;
-    spacing-rows: 10px;
-    spacing-columns: 10px;
+    spacing-rows: 4px;
+    spacing-columns: 4px;
     width: 34em;
     background-color: #282828;
     border-radius: 2px 2px 0 0;
@@ -963,9 +985,9 @@ StTooltip StLabel {
 /* We use row-span = 2 for the image cell, which prevents its height preferences to be
    taken into account during allocation, so its height ends up being limited by the height
    of the content in the other rows. To avoid showing a stretched image, we set the minimum
-   height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 = 159 */
+   height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 4 = 153 */
 .notification-with-image {
-    min-height: 159px;
+    height: 153px;
 }
 
 .summary-boxpointer {
@@ -1055,7 +1077,7 @@ StTooltip StLabel {
 }
 
 .notification-icon-button > StIcon {
-    icon-size: 36px;
+    icon-size: 16px;
 }
 
 .hotplug-transient-box {
@@ -1090,7 +1112,8 @@ StTooltip StLabel {
 
 .hotplug-resident-mount:hover {
     color: #fff;
-    background: rgba(0,153,204,0.5);
+    /*background: rgba(0,153,204,0.5);*/
+    background: rgba(51,189,229,0.5);
 }
 
 .hotplug-resident-mount-label {
@@ -1120,7 +1143,8 @@ StTooltip StLabel {
 }
 .hotplug-resident-eject-button:hover {
     border-image: none;
-    background: rgba(0,153,204,0.5);
+    /*background: rgba(0,153,204,0.5);*/
+    background: rgba(51,189,229,0.5);
 }
 
 .chat-log-message {
@@ -1233,7 +1257,8 @@ StTooltip StLabel {
 }
 
 .summary-source-button:hover {
-    background: rgba(0,153,204,0.4);
+    /*background: rgba(0,153,204,0.4);*/
+    background: rgba(51,189,229,0.4);
 }
 
 .summary-source-button:rtl {
@@ -1361,7 +1386,8 @@ StTooltip StLabel {
 
 .calendar-day-base:hover {
     color: #fff;
-    box-shadow: inset 0px 0px 0px 1px #99CC00;
+    /*box-shadow: inset 0px 0px 0px 1px #99CC00;*/
+    box-shadow: inset 0px 0px 0px 1px #33b5e5;
 }
 
 .calendar-day-base:active {
@@ -1416,6 +1442,7 @@ StTooltip StLabel {
     color: #fff;
     background: url('assets/calendar-event.svg');
     /*background-color: rgba(0,153,204,0.3);*/
+    background-color: rgba(51,189,229,0.3);
 }
 
 .events-header-vbox {
@@ -1538,13 +1565,18 @@ StTooltip StLabel {
 }
 
 .switcher-list .item-box:outlined {
-    border: 1px solid rgba(153,204,0,0.5);
-    background: rgba(153,204,0,0.15);
+    /*border: 1px solid rgba(153,204,0,0.5);
+    background: rgba(153,204,0,0.15);*/
+
+    border: 1px solid rgba(51,181,229,0.5);
+    background: rgba(51,181,229,0.15);
+
     /*border-image: url("assets/panel-button-border.svg") 10 10 0 5;*/
 }
 
 .switcher-list .item-box:selected {
-    border: 1px solid #99CC00;
+    /*border: 1px solid #99CC00;*/
+    border: 1px solid rgba(51,189,229,1.0);
 }
 
 .switcher-list .thumbnail-box {
@@ -1977,7 +2009,8 @@ StTooltip StLabel {
     padding: 4px;
     border-radius: 2px;
     border: 1px solid #161616;
-    color: #99CC00;
+    /*color: #99CC00;*/
+    color: #33B5E5;
     box-shadow: 0px 1px 4px 2px rgba(0,0,0,0.5);
 }
 
@@ -1999,11 +2032,13 @@ StTooltip StLabel {
 }
 
 #LookingGlassDialog .notebook-tab:hover {
-  color: #99CC00;
+  /*color: #99CC00;*/
+  color: #33B5E5;
 }
 
 #LookingGlassDialog .notebook-tab:selected {
-    background-color: #99CC00;
+    /*background-color: #99CC00;*/
+    background-color: #33B5E5;
     border-radius: 2px;
     color: #000;
 }
@@ -2026,17 +2061,23 @@ StTooltip StLabel {
 }
 
 .lg-obj-inspector-button {
-    background-color: rgba(153,204,0,0.2);
-    border: 1px solid rgba(153,204,0,0.5);
+    /*background-color: rgba(153,204,0,0.2);
+    border: 1px solid rgba(153,204,0,0.5);*/
+    background-color: #33B5E5;
+    border: 1px solid #33B5E5;
+
     height: 14px;
     padding: 0 8px;
     border-radius: 1px;
-    color: rgba(153,204,0,1.0);
+    /*color: rgba(153,204,0,1.0);*/
+    color: #33B5E5;
 }
 
 .lg-obj-inspector-button:hover {
-    background-color: rgba(153,204,0,1.0);
-    border: 1px solid rgba(153,204,0,1.0);
+    /*background-color: rgba(153,204,0,1.0);
+    border: 1px solid rgba(153,204,0,1.0);*/
+    background-color: #33B5E5;
+    border: 1px solid #33B5E5;
     color: #000;
 }
 
